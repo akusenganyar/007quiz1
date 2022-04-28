@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>007 QUIZ 1</title>
+</head>
+
+<body>
+    <section>
+        <!-- input text untuk nama -->
+        <input type="text" id="nama" placeholder="Nama" required>
+        <br>
+
+        <!-- input textarea untuk alamat -->
+        <textarea name="alamat" id="alamat" cols="30" rows="10" required></textarea>
+        <br>
+
+        <!-- input dropdown(SELECT, OPTION) untuk asal -->
+        <label for="asal">Asal : </label>
+        <select name="asal" id="asal">
+            <option value=""></option>
+            <option value="Malang">Malang</option>
+        </select>
+        <br>
+
+        <!-- input dropdown(SELECT, OPTION) untuk tujuan -->
+        <label for="tujuan">Tujuan :</label>
+        <select name="tujuan" id="tujuan">
+            <option value=""></option>
+            <option value="Blitar">Blitar</option>
+            <option value="Tulungagung">Tulungagung</option>
+            <option value="Kediri">Kediri</option>
+            <option value="Madiun">Madiun</option>
+            <option value="Solo">Solo</option>
+            <option value="Yogyakarta">Yogyakarta</option>
+        </select>
+        <br>
+
+        <!-- input date untuk berangkat -->
+        <label for="berangkat">tanggal keberangkatan</label>
+        <input type="date" name="berangkat" id="berangkat" value="2022-04-28" min="2022-04-28" max="2023-04-28" required>
+        <br>
+
+        <!-- button submit untuk submit -->
+        <button class="submit" onclick="validasi()">submit</button>
+    </section>
+
+    <!-- script -->
+    <script>
+        // filename: index.html
+        // author: muhammad teguh prastyo
+        // last-update: 28/04/2022
+
+        function validasi() {
+            // value dari setiap input
+            var nama = document.querySelector("#nama").value;
+            var alamat = document.querySelector("#alamat").value;
+            var asal = document.querySelector("#asal").value;
+            var tujuan = document.querySelector("#tujuan").value;
+            var berangkat = document.querySelector("#berangkat").value;
+
+            // validasi setiap variable ber-value
+            if (nama == '') {
+                alert('Data tidak boleh kosong!');
+            } else if (alamat == '') {
+                alert('Data tidak boleh kosong!');
+            } else if (asal == '') {
+                alert('Data tidak boleh kosong!');
+            } else if (tujuan == '') {
+                alert('Data tidak boleh kosong!');
+            } else if (berangkat == '') {
+                alert('Data tidak boleh kosong!');
+            } else {
+                if (!isNaN(nama)) {
+                    alert('Data tidak boleh angka');
+                } else {
+                    alert('Data berhasil ditambah!');
+                    document.getElementById("hasil").innerHTML = nama + " dan " + alamat + " dan " + asal + " dan " + tujuan + " dan " + berangkat;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
